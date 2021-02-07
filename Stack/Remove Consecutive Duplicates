@@ -1,0 +1,17 @@
+//Raksha Padiyar
+//Execution Time : 0.32
+
+public static String removeConsecutiveDuplicates(String str){
+        String s="";
+        ArrayDeque<Character> ad=new ArrayDeque<>();
+        for(int i=str.length()-1;i>=0;i--)
+        {
+         if(ad.isEmpty())
+          ad.push(str.charAt(i));
+         else if(ad.peek()!=str.charAt(i))
+          ad.push(str.charAt(i));
+        }
+        for(Character s1 : ad)
+         s=s+""+s1;
+        return s;
+    }
