@@ -1,0 +1,24 @@
+//Autho- Raksha Padiyar
+//Execution Time:0.45
+
+static boolean ispar(String x)
+   {
+    ArrayDeque<Character> s=new ArrayDeque<>();
+    for(int i=0;i<x.length();i++)
+    {
+        if(x.charAt(i)=='('||x.charAt(i)=='['||x.charAt(i)=='{')
+         s.push(x.charAt(i));
+        else if(!s.isEmpty() && x.charAt(i)==')' && s.peek()=='(')
+         s.pop();
+         else if(!s.isEmpty() && x.charAt(i)==']' && s.peek()=='[')
+         s.pop();
+         else if(!s.isEmpty() && x.charAt(i)=='}' && s.peek()=='{')
+         s.pop();
+        else
+         return false;
+    }
+    if(s.isEmpty())
+     return true;
+    else
+     return false;
+   }
