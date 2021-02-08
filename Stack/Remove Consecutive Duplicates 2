@@ -1,0 +1,33 @@
+ //Raksha Padiyar
+ //Exceution Time - 0.40
+ // input abba, output ""
+ //input aaabbccaad  , output ad
+ 
+ public static String removePair(String str){
+         ArrayDeque<Character> ad=new ArrayDeque<>();
+         String s="";
+         for(int i=str.length()-1;i>=0;i--)
+         {
+             if(ad.isEmpty())
+                {
+                    
+                    ad.push(str.charAt(i));
+                }
+                
+             else if(str.charAt(i)==ad.peek())
+                {   
+                    ad.pop();
+                }
+                
+             else
+                ad.push(str.charAt(i));
+            
+          }
+               
+         
+         for(Character c : ad)
+          s=s+""+c;
+       
+         return s;
+
+    }
